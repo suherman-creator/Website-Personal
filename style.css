@@ -1,0 +1,285 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f1f1;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section with Background Animation */
+.hero {
+  background: linear-gradient(to right, #66bb6a, #388e3c);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  animation: heroEnter 2s ease-out;
+}
+
+/* Hero Animation - Entrance */
+@keyframes heroEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated Text Effect */
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: textAppear 2s ease-out 0.5s forwards;
+}
+
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 20px auto;
+  opacity: 0;
+  animation: textAppear 2s ease-out 1s forwards;
+}
+
+/* Glow Animation for Hero Section */
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 15px #66bb6a, 0 0 30px #388e3c;
+  }
+  100% {
+    box-shadow: 0 0 30px #66bb6a, 0 0 50px #388e3c;
+  }
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+  margin-top: -60px;
+  opacity: 0;
+  animation: fadeInProfile 1.5s ease-out 1.5s forwards;
+}
+
+@keyframes fadeInProfile {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile img {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: scale(0.9);
+  animation: scaleUp 1.5s ease-in-out forwards;
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+  }
+}
+
+.profile h1 {
+  font-size: 28px;
+  color: #388e3c;
+  margin-top: 20px;
+}
+
+.profile p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Section */
+.section {
+  margin-top: 30px;
+  opacity: 0;
+  animation: fadeInSection 1.5s ease-out 2s forwards;
+}
+
+@keyframes fadeInSection {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section h2 {
+  font-size: 24px;
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.section p, .section li {
+  font-size: 16px;
+  color: #444;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Link Buttons */
+.link-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.link-container h1 {
+  font-size: 26px;
+  color: #388e3c;
+  margin-bottom: 20px;
+  animation: bounceInDown 1s ease-out;
+}
+
+.link-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  background-color: #66bb6a;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.link-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.link-button:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+table th {
+  background-color: #388e3c;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #e0f2f1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #c8e6c9;
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeInFooter 2s forwards;
+  animation-delay: 2.5s;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+@keyframes fadeInFooter {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .profile img {
+    width: 150px;
+    height: 200px;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .link-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .link-button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+}
